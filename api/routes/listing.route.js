@@ -1,5 +1,5 @@
 import  express from 'express';
-import { createList ,deleteListing,updateListing,getListing} from '../controllers/listing.controller.js';
+import { createList ,deleteListing,updateListing,getListing,getListings} from '../controllers/listing.controller.js';
 import { verifyToken } from '../utils/verifyUser.js';
 
 const router = express.Router();
@@ -8,8 +8,8 @@ const router = express.Router();
 router.post('/create', verifyToken,createList);
 router.delete('/delete/:id', verifyToken, deleteListing)
 router.post('/update/:id', verifyToken, updateListing)
-
 router.get('/get/:id',getListing)
+router.get('/get/:id',getListings)
 
 
 export default router;
