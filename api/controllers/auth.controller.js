@@ -91,7 +91,6 @@ export const signOut = async(req,res,next)=>{
         res.status(200).json('User has been log out!')
         
     } catch (error) {
-        next(error)
+        next(error);
     }
 };
-
